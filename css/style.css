@@ -18,7 +18,9 @@ header {
   padding: 1em;
   margin-bottom: 2em;
   border-bottom: 0.5em solid #e96902;
+  border-right: 0.5em solid #e96902;
   box-shadow: 1em 1em 1em #8f4101;
+  border-radius: 2em;
   flex: 1;
 }
 
