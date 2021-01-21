@@ -10,13 +10,13 @@ let sevenLetters = ['advised', 'anybody', 'beneath', 'burning', 'chamber', 'chro
 
 let eightLetters = ['achieved', 'anywhere', 'boundary', 'business', 'chemical', 'colorful', 'deadline', 'disclose', 'earnings', 'evidence', 'flagship', 'frontier', 'genomics', 'grateful', 'historic', 'humanity', 'initiate', 'isolated', 'judgment', 'junction', 'keyboard', 'laughter', 'literary', 'meantime', 'merchant', 'northern', 'numerous', 'optimism', 'overseas', 'patience', 'pipeline', 'regional', 'research', 'scrutiny', 'solution', 'taxpayer', 'tropical', 'unlawful', 'unlikely', 'weakness', 'withdraw', 'yourself'];
 
-// studia e copia il contdown
-
 let timeleft = 10;
-let downloadTimer = setInterval(function() {
+let downloadTimer = setInterval(timer, 1000);
+
+function timer() {
   if (timeleft <= 0) {
     clearInterval(downloadTimer);
   }
-  document.getElementById("progressBar").value = 10 - timeleft;
+  document.querySelector("#progressBar").value = timeleft;
   timeleft -= 1;
-}, 1000);
+}
