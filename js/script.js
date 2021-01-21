@@ -12,8 +12,8 @@ let eightLetters = ['achieved', 'anywhere', 'boundary', 'business', 'chemical', 
 
 // studia e copia il contdown
 
-var timeleft = 10;
-var downloadTimer = setInterval(function() {
+let timeleft = 10;
+let downloadTimer = setInterval(function() {
   if (timeleft <= 0) {
     clearInterval(downloadTimer);
   }
