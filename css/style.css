@@ -1,0 +1,81 @@
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-flow: column wrap;
+  color: black;
+  background-color: #fb8c2d;
+  align-content: center;
+  height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 1em;
+  margin-bottom: 2em;
+  border-bottom: 0.5em solid #e96902;
+  box-shadow: 1em 1em 1em #8f4101;
+  flex: 1;
+}
+
+section {
+  flex: 1;
+  background: #e96902;
+  box-shadow: 1em 1em 1em #8f4101;
+  margin: 0 0.5em 3em 0.5em;
+  font-weight: 700;
+  border-radius: 2em;
+  padding: 2em;
+}
+
+section div {
+  margin-bottom: 1em;
+}
+
+/* studiare lo stile della progress bar */
+progress {
+  border-radius: 2em;
+  box-shadow: 1em 1em 1em #8f4101;
+  background-color: #fb8c2d;
+  border: none;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #fb8c2d;
+  border-radius: 2em;
+}
+
+progress::-webkit-progress-value {
+  background-color: #8f4101;
+  border-radius: 2em;
+}
+
+progress::-moz-progress-bar {
+  background-color: #8f4101;
+  border-radius: 2em;
+}
+
+#time {
+  margin-top: 2.5em;
+}
+
+#message {
+  text-align: center;
+  margin-top: 2em;
+}
+
+input {
+  background-color: #fb8c2d;
+  border-radius: 2em;
+  box-shadow: 1em 1em 1em #8f4101;
+  border: none;
+  padding: 0.5em;
+}
+
+input:focus {
+  outline: none;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Type the word or die</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Type of the dead</h1>
+      <h2>Point: <span id="point">0</span></h2>
+      <h2>Level: <span id="level">0</span></h2>
+    </header>
+
+    <section id="inputWord">
+      <div id="typing">
+        <label for="typeWord"> Tipe the word: </label>
+        <input id="typeWord" type="text">
+      </div>
+      <div>
+        <label for="randomWord"> Random word: </label>
+        <input id="randomWord" type="text" disabled>
+      </div>
+      <div id="time">Time left: <progress value="0" max="10" id="progressBar"></progress>
+      </div>
+      <div id="message">Press space to start</div>
+    </section>
+  </body>
+
+</html>
