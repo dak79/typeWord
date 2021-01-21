@@ -1,4 +1,4 @@
-{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -24,6 +24,11 @@ header {
   flex: 1;
 }
 
+header h1,
+header h2 {
+  margin-top: 1em;
+}
+
 section {
   flex: 1;
   background: #e96902;
@@ -38,7 +43,6 @@ section div {
   margin-bottom: 1em;
 }
 
-/* studiare lo stile della progress bar */
 progress {
   border-radius: 2em;
   box-shadow: 1em 1em 1em #8f4101;
