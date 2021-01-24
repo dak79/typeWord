@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Type the word or die</title>
   </head>
@@ -20,15 +20,14 @@
     <section id="inputWord">
       <div id="typing">
         <label for="typeWord"> Tipe the word: </label>
-        <input id="typeWord" type="text">
+        <input id="typeWord" type="text" autofocus>
       </div>
       <div>
-        <label for="randomWord"> Random word: </label>
-        <input id="randomWord" type="text" disabled>
+        Random Word: <span id="randomWord">Ready?</span>
       </div>
       <div id="time">Time left: <progress value="10" max="10" id="progressBar"></progress>
       </div>
-      <div id="message">Press space to start</div>
+      <div id="message">Press "Enter" to start</div>
     </section>
   </body>
 
