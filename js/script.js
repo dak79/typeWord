@@ -11,12 +11,8 @@ let sevenLetters = ['advised', 'anybody', 'beneath', 'burning', 'chamber', 'chro
 let eightLetters = ['achieved', 'anywhere', 'boundary', 'business', 'chemical', 'colorful', 'deadline', 'disclose', 'earnings', 'evidence', 'flagship', 'frontier', 'genomics', 'grateful', 'historic', 'humanity', 'initiate', 'isolated', 'judgment', 'junction', 'keyboard', 'laughter', 'literary', 'meantime', 'merchant', 'northern', 'numerous', 'optimism', 'overseas', 'patience', 'pipeline', 'regional', 'research', 'scrutiny', 'solution', 'taxpayer', 'tropical', 'unlawful', 'unlikely', 'weakness', 'withdraw', 'yourself'];
 let point = 0;
 let level = 0;
-let i;
 let rW;
-let w;
 let downloadTimer;
-let h;
-
 
 
 window.addEventListener('keydown', start);
@@ -24,42 +20,42 @@ window.addEventListener('keydown', start);
 function start(evt) {
   if (evt.key === 'Enter') {
     random();
-    countDown();
     window.removeEventListener('keydown', start);
     document.addEventListener('input', wordValue);
+    let timeleft = 10;
+    let downloadTimer = setInterval(wordValue, 1000);
 
     function wordValue() {
+      if (timeleft <= 0) {
+        clearInterval(downloadTimer);
+        console.log('hai perso');
+        let gameOver = document.querySelector('#inputWord');
+        gameOver.innerHTML = 'GAME OVER <br> Press any key to start again';
+        gameOver.style.textAlign = 'center';
+        gameOver.style.fontSize = '3em';
+        document.addEventListener('keydown', reset);
+      }
+
+      document.querySelector("#progressBar").value = timeleft;
+      timeleft -= 1;
       let word = document.querySelector('#typeWord');
       let w2 = word.value;
+      evt.stopPropagation();
       if (w2 === rW) {
+        clearInterval(downloadTimer);
+        timeleft = 10;
+        document.querySelector("#progressBar").value = timeleft;
         point += 100;
         let addPoint = document.querySelector('#point');
         addPoint.innerHTML = point;
-        i += 1;
         level += 1;
         let addLevel = document.querySelector('#level');
         addLevel.innerHTML = level;
         document.querySelector('#typeWord').value = "";
         random();
-        countDown();
+        downloadTimer = setInterval(wordValue, 1000);
       }
     }
-
-  }
-}
-
-function countDown() {
-  let timeleft = 10;
-  let downloadTimer1 = setInterval(timer, 1000);
-
-  function timer() {
-    if (timeleft <= 0) {
-      clearInterval(downloadTimer);
-      console.log('hai perso');
-    }
-    document.querySelector("#progressBar").value = timeleft;
-    timeleft -= 1;
-
   }
 }
 
@@ -105,7 +101,14 @@ function random() {
     b.innerHTML = rW;
     return rW;
   } else if (level > 30) {
-    console.log('hai vinto');
+    let youWin = document.querySelector('#inputWord');
+    youWin.innerHTML = 'YOU WIN <br> Press any key to start again';
+    youWin.style.textAlign = 'center';
+    youWin.style.fontSize = '3em';
+    document.addEventListener('keydown', reset);
   }
+}
 
+function reset() {
+  window.location.reload();
 }
