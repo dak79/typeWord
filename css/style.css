@@ -98,7 +98,3 @@ input {
 input:focus {
   outline: none;
 }
-
-#reset {
-  display: none;
-}
